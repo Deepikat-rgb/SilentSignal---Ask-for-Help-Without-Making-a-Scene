@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101827">
+  <title>SilentSignal — Ask for help quietly</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="SilentSignal home"><span class="brand-mark">S</span><span>Silent<span class="brand-light">Signal</span></span></a>
+      <span class="demo-pill"><i></i> DEMO MODE</span>
+    </header>
+
+    <section class="hero">
+      <div class="eyebrow"><span class="pulse-dot"></span> YOUR QUIET SAFETY COMPANION</div>
+      <h1>Ask for help.<br><span>Without a scene.</span></h1>
+      <p class="intro">A discreet way to let someone you trust know you need support — when speaking up isn't easy.</p>
+    </section>
+
+    <section class="signal-card" aria-labelledby="signal-title">
+      <div class="card-head">
+        <div><p class="mini-label">QUICK ACTION</p><h2 id="signal-title">Send a silent signal</h2></div>
+        <span class="lock-icon" aria-label="Private">⌑</span>
+      </div>
+      <p class="card-copy">Tap the button to preview a discreet help request. This prototype does not contact anyone.</p>
+      <button id="signalButton" class="signal-button" aria-describedby="signalHint">
+        <span class="signal-ring"><span class="signal-symbol">✦</span></span>
+        <span class="signal-label">I NEED HELP</span>
+        <span class="signal-sub">Tap to start signal</span>
+      </button>
+      <p id="signalHint" class="hint">No sound • Demo only • You stay in control</p>
+      <div id="status" class="status" role="status" aria-live="polite">You're in control. Nothing has been sent.</div>
+    </section>
+
+    <section class="tools-grid">
+      <article class="tool-card">
+        <div class="tool-icon lavender">◷</div>
+        <div class="tool-content"><h3>Safe check-in</h3><p>Set a reminder to confirm you're okay.</p>
+          <div class="checkin-row"><label for="checkinTime">Remind me in</label><select id="checkinTime"><option value="5">5 minutes</option><option value="10" selected>10 minutes</option><option value="20">20 minutes</option><option value="30">30 minutes</option></select></div>
+          <button id="checkinButton" class="text-button">Start check-in <span>→</span></button>
+          <p id="checkinStatus" class="small-status" aria-live="polite"></p>
+        </div>
+      </article>
+      <article class="tool-card">
+        <div class="tool-icon mint">♡</div>
+        <div class="tool-content"><h3>Trusted people</h3><p>Choose who you'd want to contact in a real app.</p>
+          <div class="contact-chip"><span class="avatar">A</span><span><b id="contactName">A trusted person</b><small>Demo contact</small></span><button id="editContact" class="edit-button" aria-label="Edit trusted person">Edit</button></div>
+          <p class="small-status">Contact details are not collected or sent.</p>
+        </div>
+      </article>
+    </section>
+
+    <section class="how-it-works">
+      <div><p class="mini-label">DESIGNED FOR REAL LIFE</p><h2>Small action. Clear signal.</h2></div>
+      <div class="steps">
+        <div class="step"><span>01</span><div><b>Signal quietly</b><p>Use the help button without triggering a loud alarm.</p></div></div>
+        <div class="step"><span>02</span><div><b>Let trusted people know</b><p>A future connected version could send a preset message.</p></div></div>
+        <div class="step"><span>03</span><div><b>Keep your choices</b><p>Cancel the demo or mark yourself safe at any time.</p></div></div>
+      </div>
+    </section>
+
+    <footer><span class="footer-mark">S</span><span>SilentSignal</span><span class="footer-note">A hackathon prototype - designed to request help discreetly, without triggering a loud alarm.</span></footer>
+  </main>
+
+  <div id="contactModal" class="modal-backdrop" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button id="closeModal" class="close-modal" aria-label="Close">×</button>
+      <p class="mini-label">PERSONALISE YOUR DEMO</p><h2 id="modalTitle">Trusted person</h2>
+      <label for="newContact">Display name</label><input id="newContact" maxlength="30" placeholder="e.g. Best friend">
+      <p class="modal-note">This name stays in this page session only. No information is transmitted.</p>
+      <button id="saveContact" class="primary-button">Save name</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
